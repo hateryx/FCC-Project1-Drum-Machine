@@ -1,3 +1,45 @@
-#drum-machine {
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    overflow: hidden;
+    display: grid;
     place-items: center;
-}
+    background-color: whitesmoke;
+    
+  }
+  
+  
+
+  #drum-machine {
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    position: relative;
+    max-height: 32vh;
+    width: 75vh;
+    height: 32vh;
+    max-width: 75vh;
+    display: flex;
+  }
+
+  #drum-machine > .Table1 {
+    float: left;
+    flex: 50%;
+    padding: 0.5rem;
+  }
+
+  #drum-machine > .Table2 {
+    float: right;
+    flex: 50%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  #drum-machine > .drumpad {
+    place-items: center;
+    justify-content: center;
+  }
+
+  button {
+   width: 40vh;
+  }
