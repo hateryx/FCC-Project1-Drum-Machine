@@ -26,15 +26,8 @@ function App() {
   const [drum_specState, setDrum_specState] = useState(drum_spec);
 
   const Q_beat = (event) => {
-    return () => {
-      document.getElementById("Q").play();
-      setDrum_specState("Heater_1");
-    };
-
-    //Q_audio.currentTime = 0;
-    //let audey = document.getElementById("Q");
-    //audey.play();
-    //Q_audio.play();
+    /*Q_audio.play();
+    setDrum_specState("Heater_1");*/
   };
 
   const W_beat = (event) => {
@@ -128,12 +121,12 @@ function App() {
     <div className="Table1">
       <div id="drum-machine">
         <button className="drum-pad" id="Heater-1" onClick={Q_beat}>
-          Q{" "}
           <audio
             id="Q"
             src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
             className="clip"
           ></audio>
+          Q
         </button>
         <button className="drum-pad" id="Heater-2" onClick={W_beat}>
           W <audio id="W" src="./Heater-1.mp3" className="clip"></audio>
