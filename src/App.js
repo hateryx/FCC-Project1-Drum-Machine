@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
+import DrumPad from "./DrumPad";
 
 import Heater_1 from "./audio/Heater-1.mp3";
 import Heater_2 from "./audio/Heater-2.mp3";
@@ -22,12 +23,20 @@ const X_audio = new Audio(Kick);
 const C_audio = new Audio(Closed_HH);
 var drum_spec;
 
+const DRUM_CONFIG = [
+  {
+    key: "Q",
+    id: "Heater_1",
+    url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
+  },
+];
+
 function App() {
   const [drum_specState, setDrum_specState] = useState(drum_spec);
 
   const Q_beat = (event) => {
-    /*Q_audio.play();
-    setDrum_specState("Heater_1");*/
+    Q_audio.play();
+    setDrum_specState("Heater_1");
   };
 
   const W_beat = (event) => {
@@ -120,6 +129,7 @@ function App() {
   return (
     <div className="Table1">
       <div id="drum-machine">
+        <DrumPad />
         <button className="drum-pad" id="Heater-1" onClick={Q_beat}>
           <audio
             id="Q"
@@ -129,7 +139,12 @@ function App() {
           Q
         </button>
         <button className="drum-pad" id="Heater-2" onClick={W_beat}>
-          W <audio id="W" src="./Heater-1.mp3" className="clip"></audio>
+          W{" "}
+          <audio
+            id="W"
+            src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+            className="clip"
+          ></audio>
         </button>
 
         <button className="drum-pad" id="Heater-3" onClick={E_beat}>
